@@ -1,0 +1,20 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: processmessage
+spec:
+  type: bindings.azure.storagequeues
+  version: v1
+  metadata:
+  - name: accountName
+    value: "rkacrstg"
+  - name: accountKey
+    secretKeyRef:
+      name: localkey
+      key: localkey
+  - name: queueName
+    value: "daprqueue"
+  - name: decodeBase64
+    value: "true"
+auth:
+  secretStore: daprkeyvault

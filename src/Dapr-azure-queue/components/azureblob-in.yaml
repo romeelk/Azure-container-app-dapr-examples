@@ -1,0 +1,20 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: azureblobin
+spec:
+  type: bindings.azure.blobstorage
+  version: v1
+  metadata:
+  - name: storageAccount
+    value: "rkacrstg"
+  - name: storageAccessKey
+    secretKeyRef:
+      name: localkey
+      key: localkey
+  - name: container
+    value: "images"
+  - name: decodeBase64
+    value: "true"
+auth:
+  secretStore: daprkeyvault

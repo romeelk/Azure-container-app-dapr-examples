@@ -1,0 +1,35 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: <name>
+spec:
+  type: bindings.azure.eventgrid
+  version: v1
+  metadata:
+  # Required Output Binding Metadata
+  - name: accessKey
+    value: "[AccessKey]"
+  - name: topicEndpoint
+    value: "[TopicEndpoint]"
+  # Required Input Binding Metadata
+  - name: azureTenantId
+    value: "[AzureTenantId]"
+  - name: azureSubscriptionId
+    value: "[AzureSubscriptionId]"
+  - name: azureClientId
+    value: "[ClientId]"
+  - name: azureClientSecret
+    value: "[ClientSecret]"
+  - name: subscriberEndpoint
+    value: "[SubscriberEndpoint]"
+  - name: handshakePort
+    # Make sure to pass this as a string, with quotes around the value
+    value: "[HandshakePort]"
+  - name: scope
+    value: "[Scope]"
+  # Optional Input Binding Metadata
+  - name: eventSubscriptionName
+    value: "[EventSubscriptionName]"
+  # Optional metadata
+  - name: direction
+    value: "input, output"

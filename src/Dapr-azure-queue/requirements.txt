@@ -1,0 +1,6 @@
+dapr
+requests
+dapr.ext.grpc
+flask
+Pillow
+azure.storage.blob
