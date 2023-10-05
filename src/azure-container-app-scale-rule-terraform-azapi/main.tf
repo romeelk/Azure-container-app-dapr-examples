@@ -70,7 +70,7 @@ resource "azapi_resource" "producer_container_app" {
             {
               http = {
                 metadata = {
-                  concurrentRequests = "1"
+                  concurrentRequests = "2"
                 }
               }
               name = "http-rule" 
